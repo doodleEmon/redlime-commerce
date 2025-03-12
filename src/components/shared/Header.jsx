@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../assets/logo.png";
 import downArrow from "../../assets/downArrow.png";
 import instagram from "../../assets/instagram.png";
@@ -8,7 +8,7 @@ import { navItems } from "../../utils/navItem";
 
 const Header = () => {
   return (
-    <nav className="mt-[30px]">
+    <nav className="mt-[30px] px-[137px]">
       <div className="flex justify-between">
         <div>
           <img src={logo} alt="Logo" />

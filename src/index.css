@@ -10,5 +10,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; /* Ensure the background covers the full viewport height */
+  min-height: 100vh;
 }
+
+/* .gradient-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #EF4444, #6366F1);
+  border-image-slice: 1;
+  border-radius: 30px;
+} */
