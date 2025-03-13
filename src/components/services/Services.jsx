@@ -29,7 +29,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className='mt-[160px] px-[137px] bg-[#31428c43] py-[55px]'>
+    <section className='mt-[160px] px-[130px] bg-[#31428c43] py-[55px]'>
       <ul className='flex justify-between'>
         {
             services.map(item => (

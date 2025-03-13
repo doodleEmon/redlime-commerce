@@ -9,8 +9,8 @@ import legitScript from "../../assets/legitScript.png";
 
 const Footer = () => {
   return (
-    <div className="bg-gradient-to-b from-[#33428d] to-[#1b1b1b] pt-16">
-      <div className="px-[137px] flex justify-between gap-44">
+    <section className="bg-gradient-to-b from-[#33428d] to-[#1b1b1b] pt-16 mt-[160px]">
+      <div className="px-[130px] flex justify-between gap-44">
         <div className="w-full">
           <div className="border border-slate-400 rounded-2xl p-6">
             <div>
@@ -93,7 +93,7 @@ const Footer = () => {
       <div className="mt-14">
         <img src={branding} alt="Brand" className="px-[60px] h-[581px]" />
       </div>
-    </div>
+    </section>
   );
 };
 

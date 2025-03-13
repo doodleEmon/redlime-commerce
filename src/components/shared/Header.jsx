@@ -8,7 +8,7 @@ import { navItems } from "../../utils/navItem";
 
 const Header = () => {
   return (
-    <nav className="mt-[30px] px-[137px]">
+    <nav className="mt-[30px] px-[130px]">
       <div className="flex justify-between">
         <div>
           <img src={logo} alt="Logo" />
