@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -12,10 +14,3 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
-
-/* .gradient-border {
-  border: 2px solid transparent;
-  border-image: linear-gradient(to right, #EF4444, #6366F1);
-  border-image-slice: 1;
-  border-radius: 30px;
-} */

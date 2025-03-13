@@ -54,7 +54,7 @@ const Header = () => {
           </ul>
           <div className="flex gap-8 justify-end">
             <button className="border py-1 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">Sign Up</button>
-            <button className="border py-1 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">Login</button>
+            <button className="border py-1 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">Log In</button>
             <img src={cart} alt="Cart" />
           </div>
         </div>
