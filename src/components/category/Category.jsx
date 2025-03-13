@@ -2,8 +2,8 @@ import React from 'react'
 
 const Category = () => {
   return (
-    <section className='mt-[80px] px-[137px]'>
-      <h1 className='text-[48px] font-bold'>Shop By{" "}<span className='text-transparent bg-clip-text bg-gradient-to-b from-yellow-700 to-white'>Category</span></h1>
+    <section className='mt-[80px] px-[137px] h-[953px] border'>
+      <h1 className='text-[48px] font-bold text-center'>Shop By{" "}<span className='text-transparent bg-clip-text bg-gradient-to-b from-yellow-800 to-yellow-200'>Category</span></h1>
     </section>
   )
 }
