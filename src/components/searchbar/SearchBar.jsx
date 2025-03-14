@@ -13,7 +13,7 @@ const SearchBar = () => {
           placeholder="Search by product/treatment"
         />
         <img
-          onClick={""}
+          // onClick={""}
           src={search}
           alt="Sent"
           className="absolute left-8 bottom-7"

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,8 +15,15 @@ body {
   min-height: 100vh;
 }
 
+.review-card {
+  background-image: url("/public/reviewBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+}
+
 .slick-slide > div {
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 .slider-container .slick-track {
@@ -26,4 +33,14 @@ body {
 
 .slider-container .slick-slide {
   height: auto !important;
+}
+
+.slick-dots li button:before {
+  background-color: #b9b8b8;
+  height: 12px !important;
+  width: 12px !important;
+  border-radius: 100%;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-top: 40px;
 }

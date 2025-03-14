@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
           <img
-            onClick={""}
+            // onClick={""}
             className="mx-auto pt-[74px]"
             src={hippa}
             alt="Hippa"
