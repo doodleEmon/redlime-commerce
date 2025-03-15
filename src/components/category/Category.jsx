@@ -3,7 +3,7 @@ import dummyImg from "/reviewBg.png";
 
 const Category = () => {
   return (
-    <section className="mt-[80px] px-5 xl:px-[130px] border">
+    <section className="mt-[80px] px-5 xl:px-[130px]">
       <h1 className="text-[48px] font-bold text-center">
         Shop By{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-b from-yellow-800 to-yellow-200">
