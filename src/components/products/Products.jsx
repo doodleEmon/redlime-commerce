@@ -77,8 +77,8 @@ export default function ProductList(props) {
 
   return (
     <div className="px-10 xl:px-[130px] mt-[160px]">
-      <h1 className="text-5xl font-bold text-center">
-        Solutions for your unique health goals
+      <h1 className="text-5xl text-center capitalize font-anton tracking-wide">
+        Solutions for your <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974]">unique</span> health goals
       </h1>
       {/* Filter Section */}
       <div className="relative flex items-center justify-center mb-4 mt-11 px-[95px]">
@@ -112,7 +112,7 @@ export default function ProductList(props) {
                 setCurrentPage(1);
               }}
             >
-              <p className="text-[18px]">{category}</p>
+              <p className="text-[18px] capitalize">{category}</p>
             </button>
           ))}
         </div>

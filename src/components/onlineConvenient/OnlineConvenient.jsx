@@ -24,8 +24,8 @@ const OnlineConvenient = () => {
       <div className="absolute top-[79px] w-full px-[130px]">
         <div className="flex">
           <div className="w-full">
-            <h1 className="text-5xl font-bold">100% Online,</h1>
-            <h1 className="text-5xl font-bold">100% Convenient</h1>
+            <p className="text-5xl font-anton tracking-wide leading-snug">100% Online,</p>
+            <p className="text-5xl font-anton tracking-wide leading-snug">100% Convenient</p>
           </div>
           <ul className="w-full flex flex-col gap-4">
             {benefits.map((item) => (

@@ -58,9 +58,10 @@ const Reviews = (props) => {
 
   return (
     <div className="slider-container mt-[160px]">
+      <p className="text-5xl capitalize font-anton text-center tracking-wide">Hear what <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974]">rizz</span> patients have to say</p>
       <Slider {...settings} ref={sliderNav}>
         {data.map((d) => (
-          <div key={d.id} className="p-10 review-card rounded-xl relative">
+          <div key={d.id} className="p-10 review-card rounded-xl relative mt-14">
             <img
               className="absolute top-8 left-8"
               src={invertedComma}

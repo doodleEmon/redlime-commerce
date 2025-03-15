@@ -4,10 +4,10 @@ const Hero = () => {
   return (
     <section className="px-[130px] mt-16">
       <div>
-        <h1 className="text-6xl font-bold">Prescription</h1>
-        <h1 className="text-6xl font-bold">Treatments For</h1>
-        <h1 className="text-6xl font-bold">Your</h1>
-        <h1 className="text-6xl font-bold">Health Goals</h1>
+        <p className="text-7xl font-anton font-bold tracking-wider leading-snug">Prescription</p>
+        <p className="text-7xl font-anton font-bold tracking-wider leading-snug">Treatments For</p>
+        <p className="text-7xl font-anton font-bold tracking-wider leading-snug">Your</p>
+        <p className="text-7xl font-anton font-bold tracking-wider leading-snug text-[#E1C06E]">Health Goals</p>
       </div>
       <div className="flex items-center mt-[34px]">
         <div className="rounded-full bg-gradient-to-r from-pink-500 to-blue-500 p-[2px]">
