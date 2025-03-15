@@ -1,7 +1,12 @@
 import React from "react";
 import dummyImg from "/reviewBg.png";
 
-const Category = () => {
+const Category = (props) => {
+  const productList = props?.products?.data?.products || [];
+  // Extract unique categories
+  const uniqueCategories = [
+    ...new Set(productList.map((product) => product.category)),
+  ];
   return (
     <section className="mt-[80px] px-5 xl:px-[130px]">
       <h1 className="text-[48px] font-bold text-center">
@@ -10,25 +15,17 @@ const Category = () => {
           Category
         </span>
       </h1>
-      <div className="columns-1 sm:columns-2 lg:columns-3 py-10 md:py-20 gap-4">
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
-        <div className="mb-4 break-inside-avoid">
-          <img src={dummyImg} alt="" className="w-full object-cover rounded-lg" />
-        </div>
+      <div className="grid grid-cols-3 py-10 md:py-20 gap-4">
+        {uniqueCategories?.map((category, index) => (
+          <div key={index} className="mb-4 break-inside-avoid relative">
+            <img
+              src={dummyImg}
+              alt={category}
+              className="w-full object-cover rounded-lg"
+            />
+            <p className="absolute left-5 bottom-5">{category}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

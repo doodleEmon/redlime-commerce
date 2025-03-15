@@ -7,30 +7,21 @@ import leftPagination from "../../assets/leftPaginationArrow.png";
 import rightPagination from "../../assets/rightPaginationArrow.png";
 import cartPlus from "../../assets/cartPlus.png";
 
-const categories = [
-  "All",
-  "Electronics",
-  "Clothing",
-  "Shoes",
-  "Watches",
-  "Books",
-  "Toys",
-  "Furniture",
-  "Beauty",
-  "Sports",
-];
-const products = Array.from({ length: 30 }, (_, i) => ({
-  id: i + 1,
-  name: `Product ${i + 1}`,
-}));
-const itemsPerPage = 8;
-
-export default function ProductList() {
+export default function ProductList(props) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const scrollRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [btnClicked, setButtonClicked] = useState(0);
+  const [isScrollable, setIsScrollable] = useState(false);
+  const itemsPerPage = 8;
+
+  const productList = props?.products?.data?.products || [];
+  // Extract unique categories
+  const uniqueCategories = [
+    "All",
+    ...new Set(productList.map((product) => product.category)),
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,10 +30,21 @@ export default function ProductList() {
         setButtonClicked(1);
       }
     };
+
+    const checkScrollable = () => {
+      if (scrollRef.current) {
+        setIsScrollable(
+          scrollRef.current.scrollWidth > scrollRef.current.clientWidth
+        );
+      }
+    };
+
     const scrollElement = scrollRef.current;
     if (scrollElement) {
       scrollElement.addEventListener("scroll", handleScroll);
+      checkScrollable();
     }
+
     return () => {
       if (scrollElement) {
         scrollElement.removeEventListener("scroll", handleScroll);
@@ -52,8 +54,8 @@ export default function ProductList() {
 
   const filteredProducts =
     selectedCategory === "All"
-      ? products
-      : products.filter((p) => p.category === selectedCategory);
+      ? productList
+      : productList.filter((p) => p.category === selectedCategory);
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = filteredProducts.slice(
@@ -79,8 +81,8 @@ export default function ProductList() {
         Solutions for your unique health goals
       </h1>
       {/* Filter Section */}
-      <div className="relative flex items-center mb-4 mt-11 px-[95px]">
-        {scrollPosition > 0 && (
+      <div className="relative flex items-center justify-center mb-4 mt-11 px-[95px]">
+        {isScrollable && scrollPosition > 0 && (
           <button
             onClick={() => handleScroll("left")}
             className={`absolute left-0 ${
@@ -97,31 +99,36 @@ export default function ProductList() {
           ref={scrollRef}
           className="flex space-x-4 w-full overflow-hidden scroll-smooth"
         >
-          {categories.map((category) => (
+          {uniqueCategories.map((category, index) => (
             <button
-              key={category}
+              key={index}
               className={`px-6 py-4 rounded-full whitespace-nowrap ${
                 selectedCategory === category
                   ? "bg-[#E1C06E] text-black"
                   : "bg-transparent border hover:bg-[#E1C06E] hover:text-black"
               }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category);
+                setCurrentPage(1);
+              }}
             >
               <p className="text-[18px]">{category}</p>
             </button>
           ))}
         </div>
-        <button
-          onClick={() => handleScroll("right")}
-          className={`absolute right-0 ${
-            btnClicked ? "bg-[#E1C06E]" : "bg-transparent"
-          } border px-8 py-[22.5px] rounded-full z-10`}
-        >
-          <img
-            src={btnClicked ? rightArrBlack : rightArrBtn}
-            alt="Right arrow button"
-          />
-        </button>
+        {isScrollable && (
+          <button
+            onClick={() => handleScroll("right")}
+            className={`absolute right-0 ${
+              btnClicked ? "bg-[#E1C06E]" : "bg-transparent"
+            } border px-8 py-[22.5px] rounded-full z-10`}
+          >
+            <img
+              src={btnClicked ? rightArrBlack : rightArrBtn}
+              alt="Right arrow button"
+            />
+          </button>
+        )}
       </div>
 
       {/* Product List */}
@@ -129,16 +136,28 @@ export default function ProductList() {
         {currentProducts.map((product) => (
           <div
             key={product.id}
-            className="relative border rounded-lg text-center h-[262px]"
+            className="relative rounded-lg text-center h-[262px] bg-[#31428c4a]"
           >
-            <div className="flex p-5">
-              <div className="w-1/2">image</div>
-              <div className="w-1/2">product title</div>
+            <div className="flex p-5 justify-center items-center h-3/4 gap-2">
+              <div className="w-1/2">
+                <img
+                  src={product.thumbnail}
+                  alt={product.title}
+                  loading="lazy"
+                  width="100"
+                  height="100"
+                />
+              </div>
+              <div className="w-1/2 flex items-center justify-center">
+                <p className="text-[18px] text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974] font-semibold">
+                  {product.title}
+                </p>
+              </div>
             </div>
             <div className="absolute bottom-0 w-full">
               <div className="flex justify-between">
-                <div className="w-2/3 flex items-center p-5 bg-[#222443] bg-opacity-50 rounded-bl-lg">
-                  <small>$90.99/per month</small>
+                <div className="w-2/3 flex items-center p-5 bg-[#1F1F1F] bg-opacity-30 rounded-bl-lg">
+                  <small>${product.price}/per month</small>
                 </div>
                 <div className="w-1/3 flex justify-center items-center bg-gradient-to-b from-[#C1842D] to-[#ECC974] py-5 rounded-br-lg">
                   <img src={cartPlus} alt="Cart icon" />
