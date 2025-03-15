@@ -1,50 +1,50 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
+import invertedComma from "../../assets/invertedComma.png";
+import reviewer from "../../assets/reviewer.png";
+import starFilled from "../../assets/starFilled.png";
+import starUnfilled from "../../assets/starUnfilled.png";
 
 const data = [
   {
     id: 1,
-    name: "Jonathan",
+    name: "John Williams",
     message:
       "I’ve tried every home remedy and hair care treatment but ended up with long waits and no results. Since I’ve started using Hims my hair has grown, thickened, and darkened tremendously.",
-    star: 3,
-    image:
-      "https://plus.unsplash.com/premium_photo-1720253089384-6876aba379e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    designation: "Software engineer",
+    star: 4,
+    image: reviewer,
+    designation: "Lead designer",
   },
   {
     id: 2,
-    name: "Jonathan",
+    name: "John Williams",
     message:
       "I’ve tried every home remedy and hair care treatment but ended up with long waits and no results. Since I’ve started using Hims my hair has grown, thickened, and darkened tremendously.",
     star: 3,
-    image:
-      "https://plus.unsplash.com/premium_photo-1720253089384-6876aba379e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    designation: "Software engineer",
+    image: reviewer,
+    designation: "Lead designer",
   },
   {
     id: 3,
-    name: "Jonathan",
+    name: "John Williams",
     message:
       "I’ve tried every home remedy and hair care treatment but ended up with long waits and no results. Since I’ve started using Hims my hair has grown, thickened, and darkened tremendously.",
-    star: 3,
-    image:
-      "https://plus.unsplash.com/premium_photo-1720253089384-6876aba379e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    designation: "Software engineer",
+    star: 5,
+    image: reviewer,
+    designation: "Lead designer",
   },
   {
     id: 4,
-    name: "Jonathan",
+    name: "John Williams",
     message:
       "I’ve tried every home remedy and hair care treatment but ended up with long waits and no results. Since I’ve started using Hims my hair has grown, thickened, and darkened tremendously.",
-    star: 3,
-    image:
-      "https://plus.unsplash.com/premium_photo-1720253089384-6876aba379e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    designation: "Software engineer",
+    star: 4,
+    image: reviewer,
+    designation: "Lead designer",
   },
 ];
 
-const Reviews = () => {
+const Reviews = (props) => {
   const sliderNav = useRef(null);
 
   const settings = {
@@ -53,21 +53,37 @@ const Reviews = () => {
     arrows: false,
     dots: true,
     centerMode: true,
-    centerPadding: "20%",  // for partially view previous & next slide
+    centerPadding: "20%", // for partially view previous & next slide
   };
 
   return (
     <div className="slider-container mt-[160px]">
       <Slider {...settings} ref={sliderNav}>
         {data.map((d) => (
-          <div key={d.id} className="p-8 review-card rounded-xl">
-            <p>{d.message}</p>
-            <div>stars</div>
-            <div>
-              <img className="h-24 w-24" src={d.image} alt={d.name} />
-              <div>
-                <h3>{d.name}</h3>
-                <h3>{d.designation}</h3>
+          <div key={d.id} className="p-10 review-card rounded-xl relative">
+            <img
+              className="absolute top-8 left-8"
+              src={invertedComma}
+              alt="Inverted Comma"
+            />
+            <p className="pt-10 tracking-wider leading-7 text-[16px] text-left font-thin">
+              {d.message}
+            </p>
+            <div className="flex justify-center items-center gap-x-3 my-9">
+              {[...Array(5)].map((_, index) => (
+                <img
+                  key={index}
+                  src={index < d.star ? starFilled : starUnfilled}
+                  alt={index < d.star ? "Filled Star" : "Unfilled Star"}
+                  className="w-6 h-6"
+                />
+              ))}
+            </div>
+            <div className="flex justify-center items-center gap-5">
+              <img src={d.image} alt={d.name} height="60px" width="60px" />
+              <div className="flex flex-col gap-2">
+                <h3 className="font-semibold text-xl">{d.name}</h3>
+                <h3 className="font-semibold text-[#FFFFFF] opacity-50">{d.designation}</h3>
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ const Home = () => {
       <Services />
       <Products products={products} />
       <OnlineConvenient />
-      <Reviews />
+      <Reviews products={products} />
     </div>
   );
 };

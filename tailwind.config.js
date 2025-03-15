@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         arimo: ["Arimo", "sans-serif"],
         anton: ["Anton", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       }
     },
   },

@@ -15,7 +15,7 @@ const Category = (props) => {
           Category
         </span>
       </h1>
-      <div className="grid grid-cols-3 py-10 md:py-20 gap-4">
+      <div className="grid grid-cols-3 gap-4 mt-12">
         {uniqueCategories?.map((category, index) => (
           <div key={index} className="mb-4 break-inside-avoid relative">
             <img
