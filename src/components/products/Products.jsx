@@ -204,7 +204,7 @@ export default function ProductList(props) {
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
           disabled={currentPage === totalPages}
-          className="bg-[#E1C06E] max-sm:p-2 lg:p-3 xl:p-4 rounded-full disabled:opacity-50"
+          className="bg-[#E1C06E] max-sm:p-2 md:p-[9px] lg:p-3 xl:p-4 rounded-full disabled:opacity-50"
         >
           <img src={rightPagination} alt="Left pagination" />
         </button>
