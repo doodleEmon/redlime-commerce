@@ -29,7 +29,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className='max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px] max-sm:px-5 sm:px-10 md:px-16 lg:px-32 xl:px-[130px] bg-[#31428c43] py-[55px]'>
+    <section className='max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px] max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px] bg-[#31428c43] py-[55px]'>
       <ul className='flex justify-between gap-[68px] overflow-hidden overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
         {
             services.map(item => (

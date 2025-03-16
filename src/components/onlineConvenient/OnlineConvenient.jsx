@@ -21,7 +21,7 @@ const OnlineConvenient = () => {
   return (
     <section className="max-sm:mt-[80px] sm:mt-[100px] md:mt-[120px] lg:mt-[140px] xl:mt-[160px] relative">
       <img src={onlineBg} alt="Online Convenient" />
-      <div className="absolute max-sm:top-5 sm:top-8 md:top-10 lg:top-16 xl:top-[79px] w-full max-sm:px-5 sm:px-10 md:px-[50px] lg:px-[100px] xl:px-[130px]">
+      <div className="absolute max-sm:top-5 sm:top-8 md:top-10 lg:top-16 xl:top-[79px] w-full max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px]">
         <div className="flex">
           <div className="w-full">
             <p className="max-sm:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-anton tracking-wide leading-snug">

@@ -20,7 +20,7 @@ const Category = (props) => {
   };
 
   return (
-    <section className="max-sm:mt-[40px] sm:mt-[50px] md:mt-[60px] lg:mt-[70px] xl:mt-[80px] max-sm:px-5 sm:px-[50px] md:px-[80px] lg:px-[100px] xl:px-[130px]">
+    <section className="max-sm:mt-[40px] sm:mt-[50px] md:mt-[60px] lg:mt-[70px] xl:mt-[80px] max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px]">
       <p className="max-sm:text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] font-anton text-center">
         Shop By{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974]">

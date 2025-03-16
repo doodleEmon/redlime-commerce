@@ -89,7 +89,7 @@ export default function ProductList(props) {
   };
 
   return (
-    <div className="max-sm:px-5 sm:px-10 md:px-20 lg:px-[100px] xl:px-[130px] max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px]">
+    <div className="max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px] max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px]">
       <h1 className="max-sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center capitalize font-anton tracking-wide">
         Solutions for your{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974]">

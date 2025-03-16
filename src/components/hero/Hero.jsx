@@ -2,18 +2,18 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="max-sm:px-5 sm:px-10 md:px-[80px] lg:px-[100px] xl:px-[130px]  max-sm:mt-28 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56">
+    <section className="max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px] max-sm:mt-28 sm:mt-32 md:mt-48 xl:mt-56">
       <div className="flex flex-col max-sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5">
-        <p className="max-sm:text-3xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-relaxed">
+        <p className="max-sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-relaxed">
           Prescription
         </p>
-        <p className=" max-sm:text-3xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug">
+        <p className=" max-sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug">
           Treatments For
         </p>
-        <p className=" max-sm:text-3xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug">
+        <p className=" max-sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug">
           Your
         </p>
-        <p className=" max-sm:text-3xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug text-[#E1C06E]">
+        <p className=" max-sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-anton font-semibold tracking-wider leading-snug text-[#E1C06E]">
           Health Goals
         </p>
       </div>

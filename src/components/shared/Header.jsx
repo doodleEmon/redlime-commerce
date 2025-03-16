@@ -54,7 +54,7 @@ const Header = () => {
       } mb-24`}
     >
       <div
-        className={`flex justify-between items-center max-sm:px-6 sm:px-[50px] md:px-[80px] lg:px-[100px] xl:px-[130px] ${
+        className={`flex justify-between items-center max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px] ${
           scrolled ? "py-1" : "py-4"
         }`}
       >

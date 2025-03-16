@@ -10,7 +10,7 @@ import legitScript from "../../assets/legitScript.png";
 const Footer = () => {
   return (
     <section className="bg-gradient-to-b from-[#33428d] to-[#1b1b1b] pt-16 mt-[160px]">
-      <div className="max-sm:px-2 sm:px-5 md:px-8 lg:px-[100px] xl:px-[130px] md:flex justify-between lg:gap-10 xl:gap-44">
+      <div className="max-sm:px-2 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px] md:flex justify-between lg:gap-10 xl:gap-44">
         <div className="w-full px-4">
           <div className="border border-slate-400 rounded-2xl p-6">
             <div>
