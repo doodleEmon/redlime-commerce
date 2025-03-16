@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="px-[130px] mt-16">
+    <section className="px-[130px] mt-56">
       <div>
         <p className="text-7xl font-anton font-bold tracking-wider leading-snug">Prescription</p>
         <p className="text-7xl font-anton font-bold tracking-wider leading-snug">Treatments For</p>
