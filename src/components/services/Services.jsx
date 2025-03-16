@@ -29,13 +29,13 @@ const services = [
 
 const Services = () => {
   return (
-    <section className='mt-[160px] px-[130px] bg-[#31428c43] py-[55px]'>
-      <ul className='flex justify-between'>
+    <section className='max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px] max-sm:px-5 sm:px-10 md:px-16 lg:px-32 xl:px-[130px] bg-[#31428c43] py-[55px]'>
+      <ul className='flex justify-between gap-[68px] overflow-hidden overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
         {
             services.map(item => (
-                <li key={item.id} className='flex items-center gap-8'>
+                <li key={item.id} className='flex items-center max-sm:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8'>
                     <img src={item.image} alt={item.title} />
-                    <p className='text-xl'>{item.title}</p>
+                    <p className='max-sm:text-sm md:text-base lg:text-lg xl:text-xl'>{item.title}</p>
                 </li>
             ))
         }

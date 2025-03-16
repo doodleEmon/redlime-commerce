@@ -54,16 +54,16 @@ const Header = () => {
       } mb-24`}
     >
       <div
-        className={`flex justify-between items-center px-6 lg:px-[130px] ${
+        className={`flex justify-between items-center max-sm:px-6 sm:px-[50px] md:px-[80px] lg:px-[100px] xl:px-[130px] ${
           scrolled ? "py-1" : "py-4"
         }`}
       >
         {/* Logo */}
         <div>
           {scrolled ? (
-            <img src={rizzLogo} alt="Logo" className="w-32" />
+            <img src={rizzLogo} alt="Rizz Logo" className="max-sm:w-16 sm:w-16 md:w-24 lg:w-28 xl:w-32" />
           ) : (
-            <img src={logo} alt="Logo" className="w-32" />
+            <img src={logo} alt="Logo" className="max-sm:w-12 sm:w-16 md:w-24 lg:w-28 xl:w-32" />
           )}
         </div>
 

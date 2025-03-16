@@ -76,12 +76,12 @@ export default function ProductList(props) {
   };
 
   return (
-    <div className="px-10 xl:px-[130px] mt-[160px]">
-      <h1 className="text-5xl text-center capitalize font-anton tracking-wide">
+    <div className="max-sm:px-5 sm:px-10 md:px-20 lg:px-[100px] xl:px-[130px] max-sm:mt-[50px] sm:mt-[80px] md:mt-[100px] lg:mt-[140px] xl:mt-[160px]">
+      <h1 className="max-sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center capitalize font-anton tracking-wide">
         Solutions for your <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#C1842D] to-[#ECC974]">unique</span> health goals
       </h1>
       {/* Filter Section */}
-      <div className="relative flex items-center justify-center mb-4 mt-11 px-[95px]">
+      <div className="relative flex items-center justify-center mb-4 mt-11 max-sm:px-[35px] sm:px-[50px] md:px-[75px] lg:px-[85px] xl:px-[95px]">
         {isScrollable && scrollPosition > 0 && (
           <button
             onClick={() => handleScroll("left")}
@@ -102,7 +102,7 @@ export default function ProductList(props) {
           {uniqueCategories.map((category, index) => (
             <button
               key={index}
-              className={`px-6 py-4 rounded-full whitespace-nowrap ${
+              className={`max-sm:px-3 md:px-4 lg:px-5 xl:px-6 max-sm:py-2 md:py-[9px] lg:py-3 xl:py-4 rounded-full whitespace-nowrap ${
                 selectedCategory === category
                   ? "bg-[#E1C06E] text-black"
                   : "bg-transparent border hover:bg-[#E1C06E] hover:text-black"
@@ -112,7 +112,7 @@ export default function ProductList(props) {
                 setCurrentPage(1);
               }}
             >
-              <p className="text-[18px] capitalize">{category}</p>
+              <p className="max-sm:text-[14px] lg:text-[16px] xl:text-[18px] capitalize">{category}</p>
             </button>
           ))}
         </div>
@@ -132,7 +132,7 @@ export default function ProductList(props) {
       </div>
 
       {/* Product List */}
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 mt-14">
+      <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-14">
         {currentProducts.map((product) => (
           <div
             key={product.id}
@@ -169,11 +169,11 @@ export default function ProductList(props) {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-5 mt-12">
+      <div className="flex justify-center items-center gap-5 max-sm:mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="bg-[#E1C06E] p-4 rounded-full disabled:opacity-50"
+          className="bg-[#E1C06E] max-sm:p-2 md:p-[9px] lg:p-3 xl:p-4 rounded-full disabled:opacity-50"
         >
           <img src={leftPagination} alt="Left pagination" />
         </button>
@@ -183,7 +183,7 @@ export default function ProductList(props) {
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
           disabled={currentPage === totalPages}
-          className="bg-[#E1C06E] p-4 rounded-full disabled:opacity-50"
+          className="bg-[#E1C06E] max-sm:p-2 lg:p-3 xl:p-4 rounded-full disabled:opacity-50"
         >
           <img src={rightPagination} alt="Left pagination" />
         </button>
