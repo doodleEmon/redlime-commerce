@@ -17,6 +17,20 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const moreMenuRef = useRef();
 
+  // Disable scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Cleanup function to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [menuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -61,9 +75,17 @@ const Header = () => {
         {/* Logo */}
         <div>
           {scrolled ? (
-            <img src={rizzLogo} alt="Rizz Logo" className="max-sm:w-16 sm:w-16 md:w-24 lg:w-28 xl:w-32" />
+            <img
+              src={rizzLogo}
+              alt="Rizz Logo"
+              className="max-sm:w-16 sm:w-16 md:w-24 lg:w-28 xl:w-32"
+            />
           ) : (
-            <img src={logo} alt="Logo" className="max-sm:w-12 sm:w-16 md:w-24 lg:w-28 xl:w-32" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="max-sm:w-12 sm:w-16 md:w-24 lg:w-28 xl:w-32"
+            />
           )}
         </div>
 
@@ -96,10 +118,7 @@ const Header = () => {
                             : ""
                         }`}
                       >
-                        <a
-                          href={subItem.url}
-                          className="text-black capitalize"
-                        >
+                        <a href={subItem.url} className="text-black capitalize">
                           {subItem.title}
                         </a>
                       </li>
@@ -170,12 +189,15 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="lg:hidden flex items-center">
+          <button
+            className="max-sm:w-6 md:w-8 max-sm:h-6 md:h-8"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? (
-              <Close className="w-8 h-8" />
+              <Close className="max-sm:w-6 md:w-8 max-sm:h-6 md:h-8" />
             ) : (
-              <Menu className="w-8 h-8" />
+              <Menu className="max-sm:w-6 md:w-8 max-sm:h-6 md:h-8" />
             )}
           </button>
         </div>
@@ -183,15 +205,21 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white absolute top-[60px] left-0 w-full shadow-md p-6">
-          <ul className="flex flex-col gap-4">
+        <div className="lg:hidden bg-blue-950 absolute top-[0px] left-0 w-full shadow-md p-6">
+          {/* Close Button in Top Right Corner */}
+          <div className="flex justify-end">
+            <button className="w-6 h-6" onClick={() => setMenuOpen(false)}>
+              <Close className="w-6 h-6" />
+            </button>
+          </div>
+          <ul className="flex flex-col items-center w-full gap-4">
             {navItems.map((item) =>
               item.subItem ? (
                 <li key={item.id} className="group relative">
                   <a href={item.url} className="text-[16px] flex items-center">
                     <span>{item.title}</span>
                   </a>
-                  <ul className="mt-2 bg-gray-100 p-2 rounded-md">
+                  <ul className="mt-2 border p-2 rounded-md w-40">
                     {item.subItem.map((subItem) => (
                       <li key={subItem.id}>
                         <a href={subItem.url} className="text-[14px]">
@@ -217,11 +245,15 @@ const Header = () => {
           </ul>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-4 mt-6">
-            <button className="border py-2 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">
+          <div className="flex flex-col items-center gap-4 mt-6">
+            <button className="border w-40 py-2 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">
+              <img src={cart} alt="Cart" className="w-6 h-6 inline-block" />
+              <span className="pl-1">Cart</span>
+            </button>
+            <button className="border w-40 py-2 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">
               Sign Up
             </button>
-            <button className="border py-2 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">
+            <button className="border w-40 py-2 px-4 rounded-full hover:bg-[#E1C06E] hover:text-black hover:border-[#E1C06E]">
               Log In
             </button>
           </div>

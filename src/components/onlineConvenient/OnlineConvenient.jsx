@@ -23,7 +23,7 @@ const OnlineConvenient = () => {
       <img src={onlineBg} alt="Online Convenient" />
       <div className="absolute max-sm:top-5 sm:top-8 md:top-10 lg:top-16 xl:top-[79px] w-full max-sm:px-5 sm:px-[30px] md:px-[50px] lg:px-[100px] xl:px-[130px]">
         <div className="flex">
-          <div className="w-full">
+          <div className="w-full flex flex-col max-sm:gap-2 sm:gap-2 lg:gap-3 xl:gap-4">
             <p className="max-sm:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-anton tracking-wide leading-snug">
               100% Online,
             </p>
@@ -38,7 +38,7 @@ const OnlineConvenient = () => {
                   <img
                     src={rightArrow}
                     alt="Right arrow."
-                    className=""
+                    className="max-sm:w-[12px] sm:w-[12px] md:w-[14px] lg:w-[16px] xl:w-[18px] max-sm:h-[12px] sm:h-[12px] md:h-[15px] lg:h-[17px] xl:h-[19px]"
                   />
                   <p className="max-sm:text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                     {item.title}
